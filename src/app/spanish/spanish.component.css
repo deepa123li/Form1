@@ -1,0 +1,19 @@
+.form-control.lined-input {
+  border-top: none;
+
+  border-right: none;
+
+  border-left: none;
+
+  border-radius: 0;
+
+  border-bottom: 1px solid #ccc;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+}

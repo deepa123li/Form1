@@ -1,0 +1,341 @@
+ <div class="container-fluid" >
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="container-fluid px-1 py-1 mx-auto">
+        <div class="row d-flex justify-content-center">
+          <div class="col-xl-7 col-lg-8 col-md-9 col-11">
+            <div class="card">
+              <img
+                class="admin-logo"
+                src="assets/img/logo.jpg"
+                height="100"
+                style="text-align: center; margin: 0 auto"
+              />
+              <h5 style="color: blue">Online Check-in</h5>
+              <br />
+              <div class="container center">
+                <div class="btn-group " style="width: 300px;" >
+                  <input
+                    mdbRadio
+                    type="radio"
+                    class="btn-check  "
+                    name="options"
+                    id="option1"
+                    autocomplete="off"
+                    [checked]="true"
+                    (change)="english()"
+                    
+                  />
+                  <label class="btn btn-secondary" for="option1">English</label>
+                  <input
+                    mdbRadio
+                    type="radio"
+                    class="btn-check"
+                    name="options"
+                    id="option2"
+                    autocomplete="off"
+                    (change)="spanish()"
+                  />
+                  <label class="btn btn-secondary" for="option2">Spanish</label>
+                </div>
+              </div>
+              <br />
+              <h4>Patient Details</h4>
+              <br />
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label
+                    class="form-control-label px-3 lined-input"
+                    style="color: red"
+                    >First Name<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control lined-input"
+                    id="fname"
+                    name="fname"
+                    placeholder="-"
+                    formControlName="firstName"
+                  />
+                  <span
+                    style="color: red"
+                    *ngIf="firstName && firstName.invalid && firstName.touched"
+                    >Please enter valid credentials</span
+                  >
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label
+                    class="form-control-label px-3 lined-input"
+                    style="color: red"
+                    >Last Name<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control lined-input"
+                    id="lname"
+                    name="lname"
+                    placeholder="-"
+                    formControlName="lastName"
+                  />
+                  <span
+                    style="color: red"
+                    *ngIf="lastName && lastName.invalid && lastName.touched"
+                    >Please enter valid credentials</span
+                  >
+                </div>
+              </div>
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3" style="color: red">
+                    Gender<span class="text-danger"> *</span></label
+                  >
+                  <div class="form-control lined-input">
+                    <div
+                      class="btn-group text-center"
+                      role="group"
+
+                    >
+                    <input
+                    type="radio"
+                    class="btn-check"
+                    name="gender"
+                    id="btnradio1"
+                    autocomplete="off"
+                    formControlName="gender"
+                    value="Male"
+                  />
+
+                  <label class="btn btn-outline-secondary" for="btnradio1"
+                    >Male</label
+                  >
+
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="gender"
+                    id="btnradio2"
+                    autocomplete="off"
+                    formControlName="gender"
+                    value="Female"
+                  />
+                  <label class="btn btn-outline-secondary" for="btnradio2"
+                    >Female</label
+                  >
+
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="gender"
+                    id="btnradio3"
+                    autocomplete="off"
+                    value="Other"
+                    formControlName="gender"
+                  />
+                  <label class="btn btn-outline-secondary" for="btnradio3"
+                    >Unknown/Other</label
+                  >
+
+                  <span
+                    style="color: red"
+                    *ngIf="gender && gender.invalid && gender.touched"
+                    >Gender is required</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-6 flex-column d-flex">
+
+                <label class="form-control-label px-3" style="color: red">
+                  Date of Birth<span class="text-danger"> *</span></label
+                >
+                <input
+                      class="form-control lined-input"
+                        type="text"
+                        id="dob"
+                        name="dob"
+                        placeholder="MM-DD-YYYY"
+                        formControlName="dob"
+                        style="height: 50px;"
+                      />
+                      <span
+                      style="color: red"
+                      *ngIf="dob && dob.invalid && dob.touched"
+                      >DOB is required</span
+                    >
+                  </div>
+                </div>
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3"
+                      >SSN<span class="text-danger"> </span
+                    ></label>
+                    <input
+                      type="text"
+                      class="form-control lined-input"
+                      id="ssn"
+                      name="ssn"
+                      placeholder="###-##-####"
+                      formControlName="ssn"
+                    />
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3" style="color: red"
+                      >Street Address<span class="text-danger"> * </span></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control lined-input"
+                      id="street"
+                      name="street"
+                      placeholder="-"
+                      formControlName="street"
+                    />
+                    <span
+                      style="color: red"
+                      *ngIf="street && street.invalid && street.touched"
+                      >Street Address is required</span
+                    >
+                  </div>
+                </div>
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3" style="color: red"
+                    >Apartment/Suite/Other<span class="text-danger"> * </span></label
+                  >
+                  <input
+                  type="text"
+                  class="form-control lined-input"
+                  id="address"
+                  name="address"
+                  placeholder="-"
+                  formControlName="address"
+                />
+                <span
+                style="color: red"
+                *ngIf="address && address.invalid && address.touched"
+                >Please enter valid credentials</span
+              >
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3" style="color: red"
+                  >Zip Code<span class="text-danger"> *</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control lined-input"
+                  id="zip"
+                  name="zip"
+                  placeholder="-"
+                  formControlName="zip"
+                />
+                <span
+                  style="color: red"
+                  *ngIf="zip && zip.invalid && zip.touched"
+                  >Please enter valid credentials</span
+                >
+              </div>
+            </div>
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3" style="color: red"
+                >City<span class="text-danger">* </span></label
+                >
+                <input
+                  type="text"
+                  class="form-control lined-input"
+                  id="city"
+                      name="city"
+                      placeholder="Ingresa tu ciudad"
+                      formControlName="city"
+                    />
+                    <span
+                      style="color: red"
+                      *ngIf="city && city.invalid && city.touched"
+                      >Please enter valid credentials</span
+                    >
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3" style="color: red">
+                      State<span class="text-danger">* </span></label
+                    >
+
+                    <select
+                      formControlName="state"
+                      id="inputState"
+                      class="form-control lined-input"
+                    >
+                      <option value="">Select..</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Florida</option>
+                      <option>Alaska</option>
+                      <option>Hawaii</option>
+                      <option>Georgia</option>
+                      <option>Washington</option>
+                      <option>Pennsylvania</option>
+                      <option>New Jersey</option>
+                      <option>California</option>
+                    </select>
+                  </div>
+                  <h5>Visit Details</h5>
+                  <div class="row justify-content-between text-left">
+                    <div class="form-group col-sm-6 flex-column d-flex">
+                      <label class="form-control-label px-3" style="color: red"
+                        >Reason for Visit<span class="text-danger">
+                          *</span
+                        ></label
+                      >
+                      <input
+                      type="text"
+                      class="form-control lined-input"
+                      id="reason"
+                      name="reason"
+                      placeholder="(250 character limit)"
+                      formControlName="reason"
+                    />
+                    <span
+                      style="color: red"
+                      *ngIf="reason && reason.invalid && reason.touched"
+                      >Please fill valid credentials</span
+                    >
+                  </div>
+
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                      <ngx-recaptcha2
+                        #captchaElem
+                        [siteKey]="sitekey"
+                        formControlName="recaptcha"
+                      ></ngx-recaptcha2>
+                    </div>
+
+                  <div
+                    class="form-group col-sm-6"
+                    style="text-align: center; margin: 0 auto"
+                  >
+                    <div class="row d-flex justify-content-center">
+                      <button
+
+                        class="btn btn-primary rounded-pill"
+                        type="submit"
+                        [disabled]="registrationForm.invalid"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+ 

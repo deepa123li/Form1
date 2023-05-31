@@ -1,0 +1,49 @@
+
+
+<div class="col-md-8 offset-md-2">
+    <h2>Patient List</h2>
+    <br>
+    
+    <table class="table table-striped">
+      <thead style="background-color: aquamarine;">
+        <tr>
+          <th>ID</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Gender</th>
+          <th>DOB</th>
+          <th>SSN</th>
+          <th>Street</th>
+          <th>Address</th>
+          <th>Zip</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Reason</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+       <tr *ngFor="let p of patients">
+        <td>{{p.id}}</td>
+        <td>{{p.firstName}}</td>
+        <td>{{p.lastName}}</td>
+        <td>{{p.gender}}</td>
+        <td>{{p.dob}}</td>
+        <td>{{p.ssn}}</td>
+        <td>{{p.street}}</td>
+        <td>{{p.address}}</td>
+        <td>{{p.zip}}</td>
+        <td>{{p.city}}</td>
+        <td>{{p.state}}</td>
+        <td>{{p.reason}}</td>
+         
+          
+
+          
+          
+</tr>
+      
+      </tbody>
+    </table>
+    </div>
+    

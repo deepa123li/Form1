@@ -1,0 +1,30 @@
+.form-control.lined-input {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width: 50%;
+  }
+
+  @media (max-width: 767px) {  /* Adjust the maximum width as per your needs */
+    .card{
+      border: none; /* Remove the border */
+      box-shadow: none; /* Remove any box shadow */
+      /* Add any other styles you need to remove or adjust for mobile view */
+    }
+  }
+
+  
+  
+  
+
+
+  
