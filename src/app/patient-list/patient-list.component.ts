@@ -29,7 +29,19 @@ export class PatientListComponent {
    "zip": "2013012",
    "city": "san jose",
    "state": "virginia",
-   "reason": "x-ray"},];
+   "reason": "x-ray"},
+   { "id": "a7da164d-495b-407f-be2c-d75f4d464176",
+   "firstName": "Deepali",
+   "lastName": "Pathak",
+   "gender": "F",
+   "dob": "1950-04-30T18:30:00.000+00:00",
+   "ssn": "323424242432",
+   "street": "1 mark street",
+   "address": "test",
+   "zip": "2013012",
+   "city": "san jose",
+   "state": "virginia",
+   "reason": "fever"},];
 
 
   
